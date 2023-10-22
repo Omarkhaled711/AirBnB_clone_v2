@@ -35,9 +35,9 @@ def c_text(text):
 @app.route("/python/<text>", strict_slashes=False)
 def py_text(text='is cool'):
     '''
-    display "python" followed by the value of the text variable
+    display "Python" followed by the value of the text variable
     '''
-    return f'python {text.replace("_", " ")}'
+    return f'Python {text.replace("_", " ")}'
 
 
 if __name__ == '__main__':
