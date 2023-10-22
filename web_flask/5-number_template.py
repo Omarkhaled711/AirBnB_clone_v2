@@ -2,7 +2,7 @@
 '''
 This script is a start file with flask in python
 '''
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -46,6 +46,14 @@ def show_number(n):
     display an integer number
     '''
     return f'{n} is a number'
+
+
+@app.route("/number_template/<int:n>", strict_slashes=False)
+def html_number(n):
+    '''
+    display an integer number in an html page
+    '''
+    return render_template('5-number.html', n=n)
 
 
 if __name__ == '__main__':
