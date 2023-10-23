@@ -19,7 +19,7 @@ def close_conn(exc):
 @app.route("/states_list", strict_slashes=False)
 def state_list():
     '''
-    display an integer number in an html page
+    display states in html page
     '''
     states = storage.all(State).values()
     return render_template('7-states_list.html', states=states)
