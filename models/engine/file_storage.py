@@ -14,7 +14,7 @@ class FileStorage:
             return FileStorage.__objects
         else:
             from models import classes
-            if type(cls) == str:
+            if type(cls) is str:
                 cls = classes.get(cls)
             filtered_objects = {}
             for key, obj in FileStorage.__objects.items():
@@ -68,6 +68,6 @@ class FileStorage:
 
     def close(self):
         """
-        A close method fror deserilaizing the json file objects
+        A close method
         """
-        return self.reload()
+        self.reload()

@@ -32,7 +32,7 @@ class DBStorage:
         objects = {}
 
         if cls:
-            if type(cls) == str:
+            if type(cls) is str:
                 cls = classes.get(cls)
             for obj in self.__session.query(cls).all():
                 key = "{}.{}".format(type(obj).__name__, obj.id)
