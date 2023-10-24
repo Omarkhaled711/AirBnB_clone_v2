@@ -67,17 +67,6 @@ class DBStorage:
         )
         self.__session = scoped_session(session_factory)
 
-    @property
-    def cities(self):
-        """
-        Getter attribute that returns the list of
-        City instances with state_id equal to the current State.id
-        """
-        from models import storage
-        city_instances = storage.all("City")
-        return [city for city in city_instances.values()
-                if city.state_id == self.id]
-
     def close(self):
         """ closes the current connection """
         self.__session.close()
