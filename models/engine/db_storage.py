@@ -79,7 +79,5 @@ class DBStorage:
                 if city.state_id == self.id]
 
     def close(self):
-        """
-        A close method
-        """
+        """ closes the current connection """
         self.__session.close()
